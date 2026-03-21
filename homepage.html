@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vital - Personalized Supplement Recommendations</title>
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="chatbot.css">
+    <link rel="stylesheet" href="darkmode.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">✢</span>
+                <span>VitalCheck</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a class="active" href="homepage.html">Home</a></li>
+                    <li><a href="how_it_works.html">How It Works</a></li>
+                    <li><a href="sign_up.html">Sign Up</a></li>
+                    <li><a href="recommendations.html">Get Recommendations</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+            <button id="darkToggle" title="Toggle dark mode">🌙</button>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="hero">
+        <h1>Personalized Supplement Recommendations</h1>
+        <p>Stop guessing which supplements are right for you. Get science-backed recommendations tailored to your
+            unique body, health goals, and lifestyle.</p>
+        <a class="btn" href="recommendations.html">Get Your Personalized Plan</a>
+    </section>
+
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="feature-icon">⏱️</div>
+            <h3>Save Time</h3>
+            <p>No more endless research. Get targeted supplement recommendations in minutes.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">💰</div>
+            <h3>Save Money</h3>
+            <p>Avoid wasting money on supplements that don't work for your specific needs.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3>Personalized Approach</h3>
+            <p>Recommendations based on your age, gender, allergies, and health goals.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>The Supplement Confusion Problem</h2>
+        <p>With over 29,000 dietary supplements on the market, finding what actually works for you can be
+            overwhelming. Most people:</p>
+        <ul style="margin:1rem 0 1rem 1.5rem;">
+            <li>Spend hours researching with conflicting information</li>
+            <li>Buy supplements that don't address their specific needs</li>
+            <li>Experience potential side effects from inappropriate products</li>
+            <li>Waste hundreds of dollars on ineffective solutions</li>
+        </ul>
+        <p>Vital cuts through the noise with personalized, evidence-based recommendations.</p>
+    </div>
+
+    <h2 style="text-align:center;color:#675AF0;margin:3rem 0 1rem;">What Our Users Say</h2>
+
+    <div class="testimonials">
+        <div class="testimonial-card">
+            <div class="testimonial-text">
+                "I was overwhelmed by all the supplement options. VitalCheck gave me a clear plan that actually
+                worked for my energy and joint issues."
+            </div>
+            <div class="testimonial-author">
+                <div class="author-avatar">AS</div>
+                <div class="author-info">
+                    <h4>Aradhya Singh</h4>
+                    <p>Age 42, Active Lifestyle</p>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-card">
+            <div class="testimonial-text">
+                "As someone with multiple allergies, finding safe supplements was a challenge. VitalCheck considered
+                all my restrictions and gave me perfect recommendations."
+            </div>
+            <div class="testimonial-author">
+                <div class="author-avatar">AK</div>
+                <div class="author-info">
+                    <h4>Aryan Kumar</h4>
+                    <p>Age 35, Allergies: Gluten &amp; Dairy</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style="text-align:center">
+        <h2>Ready to Find Your Perfect Supplements?</h2>
+        <p>Join thousands of users who have simplified their health journey with personalized supplement
+            recommendations.</p>
+        <a class="btn" href="recommendations.html" style="margin-top:1rem;display:inline-block;">Get Started Today</a>
+    </div>
+
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="logo">
+                <span class="logo-icon">✢</span><span>VitalCheck</span>
+            </div>
+            <div class="footer-links">
+                <a href="homepage.html">Home</a>
+                <a href="how_it_works.html">How It Works</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <p class="copyright">© 2025 VitalCheck. All rights reserved. This information is for educational
+                purposes only and is not medical advice.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        var collection = document.querySelectorAll('.card, .feature-card, .testimonial-card');
+        var arr = Array.prototype.slice.call(collection);
+        for(var i=0;i<arr.length;i++){
+            arr[i].style.opacity='0';
+            arr[i].style.transform='translateY(20px)';
+            arr[i].style.transition='opacity .5s, transform .5s';
+        }
+        setTimeout(function(){
+            for(var j=0;j<arr.length;j++){
+                (function(elm,z){
+                    setTimeout(function(){
+                        elm.style.opacity='1';
+                        elm.style.transform='translateY(0)';
+                    },z*200);
+                })(arr[j],j);
+            }
+        },200);
+    });
+</script>
+<script src="darkmode.js"></script>
+<script src="chatbot.js"></script>
+</body>
+</html>
