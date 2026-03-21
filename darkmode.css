@@ -1,0 +1,126 @@
+
+#darkToggle {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-left: 1.4rem;
+    padding: 7px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    flex-shrink: 0;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+
+   
+    background: #0F172A;
+    color: #94A3B8;
+    border: 1.5px solid #334155;
+    transition: background .2s, color .2s, border-color .2s;
+}
+
+#darkToggle:hover {
+    background: #1E293B;
+    color: #E2E8F0;
+    border-color: #475569;
+}
+
+
+#darkToggle svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    transition: color .2s;
+}
+
+
+body.dark #darkToggle {
+    background: #F1F5F9;
+    color: #0F172A;
+    border-color: #CBD5E1;
+}
+
+body.dark #darkToggle:hover {
+    background: #E2E8F0;
+}
+
+
+
+body.dark {
+    background: #0F172A !important;
+    color: #E2E8F0 !important;
+}
+
+
+body.dark .card,
+body.dark .feature-card,
+body.dark .testimonial-card,
+body.dark .box,
+body.dark .rec-card,
+body.dark .step-content,
+body.dark .feature-box,
+body.dark .supp-card,
+body.dark .profile-strip {
+    background: #1E293B !important;
+    color: #E2E8F0 !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4) !important;
+}
+
+
+body.dark .card h2,
+body.dark h3,
+body.dark .section-title,
+body.dark .card-name,
+body.dark .profile-left h2 {
+    color: #C7D2FE !important;
+}
+
+body.dark .feature-icon   { color: #818CF8 !important; }
+body.dark .author-info h4 { color: #818CF8 !important; }
+body.dark .author-info p  { color: #94A3B8 !important; }
+
+
+body.dark footer { background: #020617 !important; }
+
+
+body.dark input,
+body.dark select,
+body.dark textarea {
+    background: #1E293B !important;
+    color: #E2E8F0 !important;
+    border-color: #334155 !important;
+}
+
+
+body.dark table    { background: #1E293B !important; color: #E2E8F0 !important; }
+body.dark td       { border-color: #334155 !important; }
+body.dark tr:nth-child(even) { background: #0F172A !important; }
+
+
+body.dark .highlight-box,
+body.dark .highlight,
+body.dark .disclaimer,
+body.dark .allergy-notice,
+body.dark .notice-banner,
+body.dark .allergy-box {
+    background: #1E293B !important;
+    border-color: #4F46E5 !important;
+    color: #C7D2FE !important;
+}
+
+
+body.dark .card-why,
+body.dark .card-category,
+body.dark .detail-value { color: #94A3B8 !important; }
+body.dark .card-top     { border-color: #334155 !important; }
+body.dark .card-body    { background: #1E293B !important; }
+body.dark .card-warning { background: #292524 !important; border-color: #44403c !important; }
+
+
+body.dark p,
+body.dark li { color: #CBD5E1 !important; }
+
+body.dark .profile-tag          { background: #334155 !important; color: #94A3B8 !important; }
+body.dark .profile-tag.condition{ background: #1e3a5f !important; color: #93C5FD !important; }
+body.dark .profile-tag.allergy  { background: #3b1f1f !important; color: #FCA5A5 !important; }
