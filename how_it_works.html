@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - VitalCheck</title>
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="chatbot.css">
+    <style>
+        body { background-color: #f0f8ff; }
+
+        .section-title {
+            color: #675AF0;
+            margin: 30px 0 15px;
+            font-size: 26px;
+            border-left: 5px solid #003DA5;
+            padding-left: 15px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .steps-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 30px 0;
+        }
+
+        .step-box {
+            width: 23%;
+            text-align: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .step-number {
+            background-color: #675AF0;
+            color: white;
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 15px;
+            font-weight: bold; font-size: 20px;
+        }
+
+        .step-content {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .features-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 30px 0;
+        }
+
+        .feature-box {
+            width: 30%; text-align: center; padding: 20px;
+            margin-bottom: 20px; background-color: white;
+            border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon-hiw { font-size: 40px; margin-bottom: 15px; color: #003DA5; }
+
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 3px 10px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; }
+        th, td { border: 1px solid #ddd; padding: 15px; text-align: left; }
+        th { background-color: #003DA5; color: white; font-weight: bold; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .good { color: #003DA5; font-weight: bold; }
+        .bad  { color: #e74c3c; font-weight: bold; }
+
+        .main-button {
+            display: block; width: 220px; margin: 40px auto; padding: 15px;
+            background: #675AF0; color: white; text-align: center;
+            text-decoration: none; border-radius: 50px;
+            font-weight: bold; font-size: 18px; border: none; cursor: pointer;
+        }
+        .main-button:hover { background: #003DA5; }
+
+        .intro-text { font-size: 18px; margin-bottom: 30px; color: #555; }
+
+        .highlight-box {
+            background-color: #f0f7ff; padding: 20px;
+            border-radius: 8px; margin: 20px 0;
+            border-left: 4px solid #675AF0;
+        }
+
+        @media (max-width: 768px) {
+            .step-box, .feature-box { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">✢</span>
+                <span>VitalCheck</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a class="active" href="how_it_works.html">How It Works</a></li>
+                    <li><a href="sign_up.html">Sign Up</a></li>
+                    <li><a href="recommendations.html">Get Recommendations</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div class="container" style="padding-top:20px;">
+
+    <div class="box">
+        <h2 class="section-title">How VitalCheck Works for You</h2>
+        <p class="intro-text">We know that finding the right supplements can be confusing. With so many options and conflicting advice, it's hard to know what's right for your body. That's why we created VitalCheck - to take the guesswork out of supplements and give you personalized recommendations based on your unique needs.</p>
+        <div class="highlight-box">
+            <h3>The Science Behind Your Recommendations</h3>
+            <p>Our system analyzes hundreds of scientific studies to match supplements to your specific situation:</p>
+            <ul style="margin:.8rem 0 0 1.5rem;">
+                <li><strong>Your Age &amp; Gender:</strong> Nutritional needs change throughout life - what works at 25 might not be right at 55</li>
+                <li><strong>Allergies &amp; Sensitivities:</strong> We carefully filter out anything you might react to</li>
+                <li><strong>Your Health Goals:</strong> Whether you're looking for more energy, better sleep, or joint support</li>
+                <li><strong>Potential Interactions:</strong> We consider how supplements might work together</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2 class="section-title">Our Simple 4-Step Process</h2>
+    <div class="steps-container">
+        <div class="step-box" id="step1">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <h3>Tell Us About Yourself</h3>
+                <p>Share some basic information about your age, lifestyle, health goals, and any allergies or sensitivities you have.</p>
+            </div>
+        </div>
+        <div class="step-box" id="step2">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <h3>We Analyze Your Needs</h3>
+                <p>Our system reviews your information against the latest research to understand what might help you most.</p>
+            </div>
+        </div>
+        <div class="step-box" id="step3">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <h3>Get Your Personal Plan</h3>
+                <p>Receive recommendations tailored specifically to you, with clear explanations for each suggestion.</p>
+            </div>
+        </div>
+        <div class="step-box" id="step4">
+            <div class="step-number">4</div>
+            <div class="step-content">
+                <h3>Adjust As Needed</h3>
+                <p>As your needs change, you can update your profile anytime for new recommendations.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2 class="section-title">Why One-Size-Fits-All Doesn't Work</h2>
+        <p>Generic supplement advice often misses the mark because we're all different. Here's how our approach compares:</p>
+        <table>
+            <tr><th>Supplement Type</th><th>Typical Approach</th><th>VitalCheck's Approach</th></tr>
+            <tr><td>Iron Supplements</td><td class="bad">Often recommended for anyone feeling tired</td><td class="good">Only when it makes sense for your specific situation</td></tr>
+            <tr><td>Vitamin D</td><td class="bad">Same dosage recommended for everyone</td><td class="good">Dosage based on your needs and lifestyle factors</td></tr>
+            <tr><td>Allergies</td><td class="bad">Often an afterthought</td><td class="good">We screen everything for potential allergens</td></tr>
+        </table>
+    </div>
+
+    <h2 class="section-title">What Makes VitalCheck Different</h2>
+    <div class="features-container">
+        <div class="feature-box">
+            <div class="feature-icon-hiw">🔬</div>
+            <h3>Based on Real Science</h3>
+            <p>Our recommendations come from actual research, not just trends</p>
+        </div>
+        <div class="feature-box">
+            <div class="feature-icon-hiw">🛡️</div>
+            <h3>Your Safety Comes First</h3>
+            <p>We check for interactions and screen out anything that might not be right for you</p>
+        </div>
+        <div class="feature-box">
+            <div class="feature-icon-hiw">🎯</div>
+            <h3>Truly Personalized</h3>
+            <p>Your recommendations are based on your unique health profile</p>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2 class="section-title">Real Examples</h2>
+        <h3>Case 1: Supporting Joint Health</h3>
+        <p><strong>Profile:</strong> Mark, 50, active runner, experiencing occasional joint discomfort</p>
+        <p><strong>What We Recommended:</strong> Glucosamine, Omega-3s, and Turmeric to support joint mobility</p>
+        <br>
+        <h3>Case 2: Boosting Energy Levels</h3>
+        <p><strong>Profile:</strong> Sarah, 30, vegetarian, feeling constantly tired</p>
+        <p><strong>What We Recommended:</strong> B-complex vitamins, Iron, and CoQ10 to support energy production</p>
+        <br>
+        <h3>Case 3: Strengthening Immune System</h3>
+        <p><strong>Profile:</strong> Alex, 40, shellfish allergy, tends to catch every cold going around</p>
+        <p><strong>What We Recommended:</strong> Vitamin D, Zinc, and Vitamin C (from non-shellfish sources)</p>
+    </div>
+
+    <a class="main-button" href="recommendations.html">Start Your Personal Plan</a>
+
+</div>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="logo"><span class="logo-icon">✢</span><span>VitalCheck</span></div>
+            <div class="footer-links">
+                <a href="homepage.html">Home</a>
+                <a href="how_it_works.html">How It Works</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <p class="copyright">© 2025 VitalCheck. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('step1').onclick = function(){ alert("Step 1: Tell Us About Yourself"); };
+    document.getElementById('step2').onclick = function(){ alert("Step 2: We Analyze Your Needs"); };
+    document.getElementById('step3').onclick = function(){ alert("Step 3: Get Your Personal Plan"); };
+    document.getElementById('step4').onclick = function(){ alert("Step 4: Adjust As Needed"); };
+</script>
+<script src="chatbot.js"></script>
+</body>
+</html>
