@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitalCheck - Supplement Recommender</title>
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="chatbot.css">
+    <style>
+        :root {
+            --accent-gradient: linear-gradient(to right, #3B82F6, #9333EA);
+        }
+
+        .wrap { width: 100%; max-width: 760px; margin: 40px auto; padding: 20px; }
+
+        .rec-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 26px;
+            box-shadow: 0 6px 18px rgba(15,23,42,0.08);
+        }
+
+        .rec-card h1 {
+            margin: 0 0 18px;
+            text-align: center;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-size: 1.8rem;
+        }
+
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+        .controls { display: flex; flex-direction: column; gap: 10px; }
+
+        .controls label { font-weight: 600; color: #111; font-size: 14px; }
+
+        input[type=text], select {
+            padding: 8px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;
+        }
+
+        .checkboxes { display: flex; flex-direction: column; gap: 6px; }
+        .checkboxes label { font-size: 14px; font-weight: 400; display: flex; align-items: center; gap: 6px; }
+
+        .rec-btn {
+            background: var(--accent-gradient);
+            color: white; padding: 10px 14px; border-radius: 8px;
+            border: 0; cursor: pointer; font-weight: 600; font-size: 15px;
+            width: 100%; margin-top: 14px;
+        }
+        .rec-btn:hover { opacity: .9; }
+
+        .err { color: #DC2626; font-size: 13px; margin-top: 8px; display: none; }
+
+        @media(max-width:700px) { .grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">✢</span>
+                <span>VitalCheck</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="how_it_works.html">How It Works</a></li>
+                    <li><a href="sign_up.html">Sign Up</a></li>
+                    <li><a class="active" href="recommendations.html">Get Recommendations</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div class="wrap">
+    <div class="rec-card">
+
+        <h1>Supplement Recommender</h1>
+
+        <div class="grid">
+            <div class="controls">
+
+                <label style="font-size:20px;">Name</label>
+                <input id="name" type="text" placeholder="Optional" />
+
+                <label style="font-size:20px;">Gender</label>
+                <div>
+                    <label><input type="radio" name="gender" value="Male" checked> Male</label>
+                    &nbsp;&nbsp;
+                    <label><input type="radio" name="gender" value="Female"> Female</label>
+                    &nbsp;&nbsp;
+                    <label><input type="radio" name="gender" value="Other"> Other</label>
+                </div>
+
+                <label style="font-size:20px;">Age range</label>
+                <select id="ageRange">
+                    <option value="0-12">0-12</option>
+                    <option value="13-17">13-17</option>
+                    <option value="18-24">18-24</option>
+                    <option value="25-34" selected>25-34</option>
+                    <option value="35-44">35-44</option>
+                    <option value="45-54">45-54</option>
+                    <option value="55-64">55-64</option>
+                    <option value="65+">65+</option>
+                </select>
+
+            </div>
+
+            <div class="controls">
+                <label style="font-size:20px;">Allergies</label>
+                <div class="checkboxes" id="allergyList">
+                    <label><input type="checkbox" value="Pollen"> Pollen</label>
+                    <label><input type="checkbox" value="Dust"> Dust</label>
+                    <label><input type="checkbox" value="Peanuts"> Peanuts</label>
+                    <label><input type="checkbox" value="Milk"> Milk</label>
+                    <label><input type="checkbox" value="Eggs"> Eggs</label>
+                    <label><input type="checkbox" value="Seafood"> Seafood</label>
+                </div>
+
+                <label style="margin-top:8px; font-size:20px;">Diseases / Conditions</label>
+                <div class="checkboxes" id="diseaseList">
+                    <label><input type="checkbox" value="Diabetes"> Diabetes</label>
+                    <label><input type="checkbox" value="Asthma"> Asthma</label>
+                    <label><input type="checkbox" value="Hypertension"> Hypertension</label>
+                    <label><input type="checkbox" value="Heart Disease"> Heart Disease</label>
+                    <label><input type="checkbox" value="Arthritis"> Arthritis</label>
+                    <label><input type="checkbox" value="Thyroid"> Thyroid</label>
+                </div>
+            </div>
+        </div>
+
+        <p class="err" id="errMsg">⚠ Please enter your name to continue.</p>
+        <button class="rec-btn" id="recommendBtn">Recommend Supplements</button>
+
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="logo"><span class="logo-icon">✢</span><span>VitalCheck</span></div>
+            <div class="footer-links">
+                <a href="homepage.html">Home</a>
+                <a href="how_it_works.html">How It Works</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <p class="copyright">© 2025 VitalCheck. All rights reserved. This information is for educational purposes only and is not medical advice.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+document.getElementById('recommendBtn').addEventListener('click', function() {
+    var name     = document.getElementById('name').value.trim();
+    var ageRange = document.getElementById('ageRange').value;
+    var gender   = document.querySelector('input[name="gender"]:checked').value;
+    var allergies= Array.from(document.querySelectorAll('#allergyList input:checked')).map(function(i){ return i.value; });
+    var diseases = Array.from(document.querySelectorAll('#diseaseList input:checked')).map(function(i){ return i.value; });
+
+    // Name is optional — use default if empty
+    if (!name) name = "User";
+
+    sessionStorage.setItem("vcProfile", JSON.stringify({
+        name: name, ageRange: ageRange, gender: gender,
+        allergies: allergies, diseases: diseases
+    }));
+
+    window.location.href = "results.html";
+});
+</script>
+<script src="chatbot.js"></script>
+</body>
+</html>
